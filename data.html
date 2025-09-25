@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Data Guest Comments</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+ 
+  <style>
+    body { padding: 20px; }
+    table td { vertical-align: middle; }
+    .table-success { background-color: #d1e7dd !important; }
+    #saveBtn { display: none; } /* Default disembunyikan */
+	
+    /* Atur lebar kolom Comments */
+    #dataTable th:nth-child(19),
+    #dataTable td:nth-child(19) {
+      min-width: 350px;   /* bisa disesuaikan */
+      max-width: 450px;
+      white-space: normal; /* supaya bisa wrap */
+    }
+	
+	/* ==== Tambahan untuk header melayang ==== */
+	.table-responsive {
+	  max-height: 70vh;
+      overflow-y: auto;
+	}
+	#dataTable thead th {
+	  position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #f8f9fa;
+	}
+	#logout {
+		position: absolute;
+		top : 30px;
+		end: 0;
+		right: 35px;
+		}
+  </style>
+</head>
+<body>
+  <div class="container-fluid justify-content-between align-items-center mb-3">
+    <h2 class="mb-2">Guest Comments</h2>
+	<button id="logout" class="btn btn-outline-danger">Logout</button>
+	
+    <!-- Filter -->
+    <div class="row mb-3">
+      <div class="col-auto">
+        <label for="filterStart" class="form-label">Tanggal Mulai:</label>
+        <input 
+          type="date" 
+          id="filterStart" 
+          class="form-control" 
+          placeholder="Pilih tanggal mulai" 
+          aria-label="Tanggal mulai filter"/>
+      </div>
+      <div class="col-auto">
+        <label for="filterEnd" class="form-label">Tanggal Akhir:</label>
+        <input 
+          type="date" 
+          id="filterEnd" 
+          class="form-control" 
+          placeholder="Pilih tanggal akhir" 
+          aria-label="Tanggal akhir filter"/>
+      </div>
+      <div class="col-auto d-flex align-items-end">
+        <button id="filterBtn" class="btn btn-primary me-2" aria-label="Terapkan filter tanggal">Filter</button>
+        <button id="resetBtn" class="btn btn-secondary me-2" aria-label="Reset filter">Reset</button>
+        <button id="exportBtn" class="btn btn-success" aria-label="Export data ke Excel">Export Excel</button>
+	  </div>
+	  <div class="col d-flex align-items-end justify-content-end">
+	  <button 
+		id="chartBtn" 
+		class="btn btn-info" 
+		aria-label="Buka grafik laporan" 
+		onclick="window.location.href='report.html'">
+		<i class="bi bi-graph-up"></i> Buka Grafik
+	  </button>
+	  </div>
+    </div>
+
+    <!-- Tabel Data -->
+    <div class="table-responsive">
+      <table id="dataTable" class="table table-bordered table-hover table-sm align-middle">
+        <thead class="table-light" style="text-align:center; vertical-align:middle;">
+          <tr>
+            <th style="text-align:center;">
+              <input 
+                type="checkbox" 
+                id="selectAll" 
+                title="Pilih semua baris" 
+                aria-label="Pilih semua baris"/>
+            </th>
+            <th>Tanggal</th>
+            <th>Jam</th>
+            <th>No Meja</th>
+            <th>Nama</th>
+            <th>Asal</th>
+            <th>Media Sosial</th>
+            <th>Media Lainnya</th>
+            <th>Acara</th>
+            <th>Acara Lainnya</th>
+            <th>Usia</th>
+            <th>Food Quality</th>
+            <th>Beverage Quality</th>
+            <th>Serving Speed</th>
+            <th>Service</th>
+            <th>Cleanliness</th>
+            <th>Ambience</th>
+            <th>Price</th>
+            <th>Comments</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+
+    <!-- Tombol Simpan -->
+    <div class="mt-3">
+      <button id="saveBtn" class="btn btn-warning" aria-label="Simpan perubahan">Simpan</button>
+	  <script type="module" src="/src/data.js"></script>
+	</div>
+  </div>
+
+  
+</body>
+</html>
