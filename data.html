@@ -41,50 +41,38 @@
 		right: 35px;
 		}
   </style>
-  <script type="module" crossorigin src="/assets/data-BY7y7nzE.js"></script>
+  <script type="module" crossorigin src="/assets/data-CswU8zZX.js"></script>
   <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-B5Qt9EMX.js">
-  <link rel="modulepreload" crossorigin href="/assets/base-BoAYqK8R.js">
+  <link rel="modulepreload" crossorigin href="/assets/base-B22LZU_k.js">
 </head>
 <body>
   <div class="container-fluid justify-content-between align-items-center mb-3">
     <h2 class="mb-2">Guest Comments</h2>
 	<button id="logout" class="btn btn-outline-danger">Logout</button>
 	
-    <!-- Filter -->
-    <div class="row mb-3">
-      <div class="col-auto">
-        <label for="filterStart" class="form-label">Tanggal Mulai:</label>
-        <input 
-          type="date" 
-          id="filterStart" 
-          class="form-control" 
-          placeholder="Pilih tanggal mulai" 
-          aria-label="Tanggal mulai filter"/>
-      </div>
-      <div class="col-auto">
-        <label for="filterEnd" class="form-label">Tanggal Akhir:</label>
-        <input 
-          type="date" 
-          id="filterEnd" 
-          class="form-control" 
-          placeholder="Pilih tanggal akhir" 
-          aria-label="Tanggal akhir filter"/>
-      </div>
-      <div class="col-auto d-flex align-items-end">
-        <button id="filterBtn" class="btn btn-primary me-2" aria-label="Terapkan filter tanggal">Filter</button>
-        <button id="resetBtn" class="btn btn-secondary me-2" aria-label="Reset filter">Reset</button>
-        <button id="exportBtn" class="btn btn-success" aria-label="Export data ke Excel">Export Excel</button>
+    <!-- Filter dan Tombol -->
+	<div class="row mb-3 g-2 align-items-end">
+	  <div class="col-12 col-sm-auto">
+		<label for="filterStart" class="form-label">Tanggal Mulai:</label>
+		<input type="date" id="filterStart" class="form-control" placeholder="Pilih tanggal mulai"/>
 	  </div>
-	  <div class="col d-flex align-items-end justify-content-end">
-	  <button 
-		id="chartBtn" 
-		class="btn btn-info" 
-		aria-label="Buka grafik laporan" 
-		onclick="window.location.href='report.html'">
-		<i class="bi bi-graph-up"></i> Buka Grafik
-	  </button>
+	  <div class="col-12 col-sm-auto">
+		<label for="filterEnd" class="form-label">Tanggal Akhir:</label>
+		<input type="date" id="filterEnd" class="form-control" placeholder="Pilih tanggal akhir"/>
 	  </div>
-    </div>
+
+	  <div class="col-12 col-sm d-flex flex-wrap gap-2 mt-2 mt-sm-0">
+		<button id="filterBtn" class="btn btn-primary" aria-label="Terapkan filter tanggal">Filter</button>
+		<button id="resetBtn" class="btn btn-secondary" aria-label="Reset filter">Reset</button>
+		<button id="exportBtn" class="btn btn-success" aria-label="Export data ke Excel">Export Excel</button>
+		<button id="chartBtn" class="btn btn-info ms-auto" 
+		  aria-label="Buka grafik laporan" 
+		  onclick="window.location.href='report.html'">
+		  <i class="bi bi-graph-up"></i> Buka Grafik
+		</button>
+	  </div>
+	</div>
+
 
     <!-- Tabel Data -->
     <div class="table-responsive">

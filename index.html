@@ -5,10 +5,10 @@
   <title>Guest Card</title>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script type="module" crossorigin src="/assets/main-C0P2l4uT.js"></script>
+  <script type="module" crossorigin src="/assets/main-9b6KXhv9.js"></script>
   <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-B5Qt9EMX.js">
-  <link rel="modulepreload" crossorigin href="/assets/base-BoAYqK8R.js">
-  <link rel="stylesheet" crossorigin href="/assets/style-BRQBPefr.css">
+  <link rel="modulepreload" crossorigin href="/assets/base-B22LZU_k.js">
+  <link rel="stylesheet" crossorigin href="/assets/style-BhW0WAni.css">
 </head>
 <body>
   
@@ -46,51 +46,57 @@
         </div>
 
         <!-- 1. Asal -->
-        <fieldset class="gc-fieldset">
-          <legend>1. Asal</legend>
-          <label><input type="radio" name="asal" value="Yogyakarta" checked /> Yogyakarta</label>
-          <label><input type="radio" name="asal" value="Luar Kota" /> Luar Kota</label>
-          <label><input type="radio" name="asal" value="Luar Negeri" /> Luar Negeri</label>
-        </fieldset>
+		<fieldset class="gc-fieldset">
+		  <legend>1. Asal</legend>
+		  <div class="gc-two-col">
+		  <label><input type="radio" name="asal" value="Yogyakarta" checked /> Yogyakarta</label>
+		  <label><input type="radio" name="asal" value="Luar Kota" /> Luar Kota</label>
+		  <label><input type="radio" name="asal" value="Luar Negeri" /> Luar Negeri</label>
+		  <label><input type="radio" name="asal" value="Tidak Diisi" /> Tidak Diisi</label>
+		</fieldset>
 
-        <!-- 2. Media Sosial -->
-        <fieldset class="gc-fieldset">
-          <legend>2. Media Sosial</legend>
-          <div class="gc-two-col">
-            <label><input type="radio" name="media_source" value="Instagram" checked /> Instagram</label>
-            <label><input type="radio" name="media_source" value="Rekomendasi Teman" /> Rekomendasi Teman</label>
-            <label><input type="radio" name="media_source" value="Tiktok" /> Tiktok</label>
-			      <label><input type="radio" name="media_source" value="Lainnya" id="mediaLainnyaRadio" /> Lainnya</label>
-            <label><input type="radio" name="media_source" value="Google" /> Google</label>
-          </div>
-          <input class="gc-other" type="text" id="media_other" placeholder="Isi jika memilih Lainnya" disabled />
-        </fieldset>
+		<!-- 2. Media Sosial -->
+		<fieldset class="gc-fieldset">
+		  <legend>2. Media Sosial</legend>
+		  <div class="gc-two-col">
+			<label><input type="radio" name="media_source" value="Instagram" checked /> Instagram</label>
+			<label><input type="radio" name="media_source" value="Rekomendasi Teman" /> Rekomendasi Teman</label>
+			<label><input type="radio" name="media_source" value="Tiktok" /> Tiktok</label>
+			<label><input type="radio" name="media_source" value="Lainnya" id="mediaLainnyaRadio" /> Lainnya</label>
+			<label><input type="radio" name="media_source" value="Google" /> Google</label>
+			<label><input type="radio" name="media_source" value="Tidak Diisi" /> Tidak Diisi</label>
+		  </div>
+		  <input class="gc-other" type="text" id="media_other" placeholder="Isi jika memilih Lainnya" disabled />
+		</fieldset>
 
-        <!-- 3. Acara -->
-        <fieldset class="gc-fieldset">
-          <legend>3. Acara di Roaster and Bear</legend>
-          <div class="gc-two-col">
-            <label><input type="radio" name="event_type" value="Lunch" checked /> Lunch</label>
-            <label><input type="radio" name="event_type" value="Meeting" /> Meeting</label>
-            <label><input type="radio" name="event_type" value="Dinner" /> Dinner</label>
-            <label><input type="radio" name="event_type" value="Celebration" /> Celebration</label>
-            <label><input type="radio" name="event_type" value="Gathering" /> Gathering</label>
-            <label><input type="radio" name="event_type" value="Lainnya" id="eventLainnyaRadio" /> Lainnya</label>
-          </div>
-          <input class="gc-other" type="text" id="event_other" placeholder="Isi jika memilih Lainnya" disabled />
-        </fieldset>
+		<!-- 3. Acara -->
+		<fieldset class="gc-fieldset">
+		  <legend>3. Acara di Roaster and Bear</legend>
+		  <div class="gc-two-col">
+			<label><input type="radio" name="event_type" value="Lunch" checked /> Lunch</label>
+			<label><input type="radio" name="event_type" value="Meeting" /> Meeting</label>
+			<label><input type="radio" name="event_type" value="Dinner" /> Dinner</label>
+			<label><input type="radio" name="event_type" value="Celebration" /> Celebration</label>
+			<label><input type="radio" name="event_type" value="Gathering" /> Gathering</label>
+			<label><input type="radio" name="event_type" value="Lainnya" id="eventLainnyaRadio" /> Lainnya</label>
+			<label><input type="radio" name="event_type" value="Tidak Diisi" /> Tidak Diisi</label>
+		  </div>
+		  <input class="gc-other" type="text" id="event_other" placeholder="Isi jika memilih Lainnya" disabled />
+		</fieldset>
 
-        <!-- 4. Usia -->
-        <fieldset class="gc-fieldset">
-          <legend>4. Rentang Usia</legend>
-          <div class="gc-two-col">
-            <label><input type="radio" name="age_range" value="18-24" checked /> 18 - 24</label>
-            <label><input type="radio" name="age_range" value="36-45" /> 36 - 45</label>
-            <label><input type="radio" name="age_range" value="25-35" /> 25 - 35</label>
-            <label><input type="radio" name="age_range" value="46-60" /> 46 - 60</label>
-            <label><input type="radio" name="age_range" value=">60" /> &gt; 60</label>
-          </div>
-        </fieldset>
+		<!-- 4. Usia -->
+		<fieldset class="gc-fieldset">
+		  <legend>4. Rentang Usia</legend>
+		  <div class="gc-two-col">
+			<label><input type="radio" name="age_range" value="18-24" checked /> 18 - 24</label>
+			<label><input type="radio" name="age_range" value="36-45" /> 36 - 45</label>
+			<label><input type="radio" name="age_range" value="25-35" /> 25 - 35</label>
+			<label><input type="radio" name="age_range" value="46-60" /> 46 - 60</label>
+			<label><input type="radio" name="age_range" value=">60" /> &gt; 60</label>
+			<label><input type="radio" name="age_range" value="Tidak Diisi" /> Tidak Diisi</label>
+		  </div>
+		</fieldset>
+
 
         <input type="hidden" id="row_id" />
       </section>
